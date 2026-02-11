@@ -1,0 +1,68 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/main/schemas/manifest.v2.schema.json
+
+packaging_format = 2
+
+id = "qui"
+name = "qui"
+description.en = "qBittorrent web client"
+description.fr = "Client web pour qBittorrent"
+
+version = "1.0.0~ynh0"
+
+maintainers = ["guillaumelegoc"]
+
+[upstream]
+license = "GPL-2.0"
+admindoc = "https://getqui.com/docs/intro"
+code = "https://github.com/autobrr/qui"
+
+[integration]
+yunohost = ">= 12.1.17"
+helpers_version = "2.1"
+architectures = ["amd64", "arm64"]
+multi_instance = true
+
+ldap = false
+sso = false
+
+disk = "100M"
+ram.build = "100M"
+ram.runtime = "100M"
+
+[install]
+    [install.domain]
+    type = "domain"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
+[resources]
+
+    [resources.sources]
+
+    [resources.sources.main]
+    in_subdir = false
+    extract = true
+    amd64.url = "https://github.com/autobrr/qui/releases/download/v1.13.1/qui_1.13.1_linux_x86_64.tar.gz"
+    amd64.sha256 = "231de1865f46ce3cee3c2909401c3fb302077d8c8ffed27cd7e2d48e039d152e"
+    arm64.url = "https://github.com/autobrr/qui/releases/download/v1.13.1/qui_1.13.1_linux_arm64.tar.gz"
+    arm64.sha256 = "sha256:99cd052b06c06737f541797f444f9842acb4b021c48e0ff7961077046a63ffb1"
+    
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.asset.amd64 = "^linux-amd64-filebrowser.tar.gz$"
+    autoupdate.asset.arm64 = "^linux-arm64-filebrowser.tar.gz$"
+    autoupdate.asset.i386 = "^linux-386-filebrowser.tar.gz$"
+    autoupdate.asset.armhf = "^linux-armv7-filebrowser.tar.gz$"
+    
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.data_dir]
+
+    [resources.permissions]
+    main.url = "/"
+
+    [resources.ports]
