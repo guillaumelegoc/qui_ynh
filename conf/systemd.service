@@ -7,7 +7,7 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/qui --config-dir __INSTALL_DIR__/
+ExecStart=__INSTALL_DIR__/qui serve --config-dir __INSTALL_DIR__/
 StandardOutput=append:/var/log/__APP__/__APP__.log
 Restart=on-failure
 

@@ -1,0 +1,13 @@
+# Hostname / IP
+# Default: "localhost" (or "0.0.0.0" in containers)
+host = "127.0.0.1"
+
+# Port
+# Default: 7476
+port = __PORT__
+
+# Base URL
+# Set custom baseUrl eg /qui/ to serve in subdirectory.
+# Not needed for subdomain, or by accessing with :port directly.
+# Optional
+#baseUrl = "/qui/"

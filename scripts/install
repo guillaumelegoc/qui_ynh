@@ -16,7 +16,8 @@ chmod +x "$install_dir/qui"
 #=================================================
 ynh_script_progression "Adding $app's configuration..."
 
-$install_dir/qui generate-config --config-dir="$install_dir/"
+# $install_dir/qui generate-config --config-dir="$install_dir/"
+ynh_config_add --template="config.toml" --destination="$install_dir/config.toml"
 
 #=================================================
 # SYSTEM CONFIGURATION
